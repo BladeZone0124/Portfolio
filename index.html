@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chong Gu's Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <style type="text/css">
+        body{
+            padding: 0;
+            margin: 0;
+            background: #000000;
+            color: white;
+            font-family: "Arial Narrow",serif;
+
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .home img{
+            width: 100%;
+            -webkit-filter: grayscale(100%) contrast(200%);
+            filter: grayscale(100%) contrast(200%);
+            brightness(50%);
+        }
+
+        aside{
+            position:fixed;
+            background: #222;
+            top:0;
+            left:0;
+            width:120px;
+            height:100%;
+            z-index:1;
+            text-align: center;
+            padding: 0;
+        }
+
+        .material-icons.md-36{
+            font-size: 36px;
+        }
+
+        aside a{
+            display: block;
+            padding: 15px 0;
+            color: white;
+            transition:all 0.35s;
+            text-transform: uppercase;
+            font-size: 0.75em;
+            letter-spacing: 2px;
+        }
+
+        aside p{
+            margin: 0;
+            padding: 0;
+        }
+
+        aside a:hover{
+            background: #000;
+        }
+
+        aside nav a:nth-child(1){
+            background: #000;
+        }
+
+        aside nav a:nth-child(1):hover{
+            background: #b2b2b2;
+            color: #222;
+        }
+
+        main{
+            max-width: 980px;
+            background: #000;
+            margin-left: 20%;
+
+        }
+
+        header{
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        header h1{
+            font-weight: bold;
+            font-size: 4em;
+            letter-spacing: 4px;
+        }
+
+        header h5{
+            font-weight: 300;
+            font-size: 1em;
+            letter-spacing: 4px;
+            color: #b2b2b2;
+        }
+
+        .main .p .intro-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .main .text-slider-items {
+            display: none;
+        }
+        .about,
+        .skills,
+        .projects,
+        .contact{
+            margin-left: 20%;
+            margin-right: 15%;
+            line-height: 1.5em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .about h2,
+        .skills h2,
+        .projects h2,
+        .contact h2{
+            font-weight: 300;
+            text-transform: uppercase;
+            text-decoration: underline overline;;
+            padding-bottom: 10px;
+            margin: 100px 0 0 0;
+            letter-spacing: 4px;
+        }
+
+        .about p{
+            color: #b2b2b2;
+        }
+
+        .about a{
+            color: white;
+            text-decoration: underline;
+        }
+        .about span{
+            font-weight: 600;
+            color: white;
+        }
+        .about h4{
+            font-weight: 300;
+            margin: 50px 0;
+        }
+
+        .container{
+            width: 100%;
+            background-color: #b2b2b2;
+        }
+
+        .skill{
+            text-align: right;
+            padding-right: 20px;
+            line-height: 30px;
+            color: white;
+            background-color: #424242;
+        }
+
+        .MATLAB{
+            width: 95%;
+        }
+
+        .Verilog{
+            width: 90%;
+        }
+
+        .Java{
+            width: 85%;
+        }
+
+        .Cplus{
+            width: 80%;
+        }
+
+        .Python{
+            width: 75%;
+        }
+
+        .Html5{
+            width: 60%;
+        }
+
+        .CSS3{
+            width: 50%;
+        }
+
+        .slider {
+            margin: 50px 0 0 0;
+            width: 800px;
+            height: 600px;
+            overflow-x: scroll;
+        }
+        .slide {
+            float: left;
+            width: 800px;
+            height: 600px;
+            position: relative;
+        }
+        .slide img{
+            width: 100%;
+        }
+
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #b2b2b2;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            color: #000000;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .holder {
+            width: 300%;
+        }
+
+        form input[type="text"],
+        select,
+        textarea{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: white;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            color: #b2b2b2;
+        }
+
+        form input[type="text"]:focus,
+        textarea:focus{
+            outline: none;
+            border:1px solid #009688;
+        }
+
+        input[type="submit"]{
+            background-color: transparent;
+            color: #b2b2b2;
+            text-transform:  uppercase;
+            padding: 12px 20px;
+            border: 1px solid #b2b2b2;
+            cursor: pointer;
+            transition: all 0.35s;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #b2b2b2;
+            color: #222;
+        }
+
+        .contact .container{
+            margin-top: 20px;
+            margin-bottom: 100px;
+            background: transparent;
+            padding: 20px 0;
+        }
+
+        .footer{
+            border-top: 1px solid #222;
+        }
+
+        .top-bar {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .top-bar a{
+            margin: 10px;
+            font-size: 2em;
+            color: #b2b2b2;
+            transition: all 0.35s;
+            display:  inline-block;
+        }
+
+        .top-bar a:hover{
+            transform: scale(1.1);
+            color: #009688;
+        }
+
+
+    </style>
+</head>
+<body>
+    <aside>
+        <nav>
+            <a href="#home"><i class = "material-icons md-36">home</i><p>Home</p></a>
+            <a href="#about"><i class = "material-icons md-36">person</i><p>About</p></a>
+            <a href="#skills"><i class = "material-icons md-36">toc</i><p>Skills</p></a>
+            <a href="#projects"><i class = "material-icons md-36">important_devices</i><p>Projects</p></a>
+            <a href="#contact"><i class = "material-icons md-36">mail</i><p>Contact</p>
+            </a>
+        </nav>
+    </aside>
+
+
+
+    <main>
+        <header class="home" id="home"><br><br>
+            <h1>I'm Chong Gu</h1>
+            <h5>Electronic and Computer Science Engineer</h5>
+            <img src = "images/chonggu_bg3.jpg" alt = "">
+        </header>
+    </main>
+
+    <section class="about" id="about">
+        <h2>About me</h2>
+        <p>
+            <span>Hello, I am Chong Gu </span> <br>
+            I am an electronic and computer science engineer from China. I can program in MATLAB, Verilog, C++, Java,
+            Python. Also, I like making websites in HTML and CSS. I had contributed to several open source projects,
+            you can see more details about my contribution on <a href="https://github.com/BladeZone0124?tab=repositories">
+            my github profile</a>. <br>
+            I am a fresher, but I am very hard working person and passionate to gain more and more knowledge. Whatever
+            task I take in my hand, I do with full passion and concentration, and try to complete the task online. My
+            strengths are my quality; my interpersonal skills make me comfortable with others and my politeness
+            makes me strong in all circumstances. My weakness is my emotional nature which lands me in trouble sometime.
+        </p>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+
+        <p>MATLAB</p>
+        <div class="container">
+            <div class ="skill MATLAB">95%</div>
+        </div>
+
+        <p>Verilog</p>
+        <div class="container">
+            <div class ="skill Verilog">90%</div>
+        </div>
+
+        <p>Java</p>
+        <div class="container">
+            <div class ="skill Java">85%</div>
+        </div>
+
+        <p>C++</p>
+        <div class="container">
+            <div class ="skill Cplus">80%</div>
+        </div>
+
+        <p>Python</p>
+        <div class="container">
+            <div class ="skill Python">75%</div>
+        </div>
+
+        <p>Html 5</p>
+        <div class="container">
+            <div class ="skill Html5">60%</div>
+        </div>
+
+        <p>CSS 3</p>
+        <div class="container">
+            <div class ="skill CSS3">50%</div>
+        </div>
+
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="slider" id="slider">
+            <div class="holder">
+                <a href="https://github.com/BladeZone0124/pedometer-app">
+                    <div class="slide" id="slide-0">
+                        <img src="images/pedometer%20app.png"  style="width:100%">
+                        <div class="text-block">
+                            <h4>Pedometer App</h4>
+                            <p>Design and Build UI</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/BladeZone0124/Connect-4-Games">
+                    <div class="slide" id="slide-1">
+                        <img src="images/connect4.jpeg"  style="width:100%">
+                            <div class="text-block">
+                                <h4>Connect-Four Game</h4>
+                                <p>Build a Perfect AI</p>
+                            </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/BladeZone0124/9bits-ISA-EncrytingDrive">
+                    <div class="slide" id="slide-2">
+                        <img src="images/encyotuing%20drive.jpg"  style="width:100%">
+                        <div class="text-block">
+                            <h4>Encrypting Drive</h4>
+                            <p>Design the Instruction Set Architecture</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <div class="container">
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+                <label for="message">Massage</label>
+                <textarea name="message" id="message" style="height:200px"></textarea>
+                <input type="submit" value="message">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <section class="top-bar">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com"><i class="fab fa-github"></i></a>
+        </section>
+
+    </footer>
+</body>
+</html>
