@@ -147,45 +147,76 @@
             margin: 50px 0;
         }
 
-        .container{
-            width: 100%;
-            background-color: #b2b2b2;
-        }
-
         .skill{
-            text-align: right;
-            padding-right: 20px;
-            line-height: 30px;
-            color: white;
-            background-color: #424242;
+            height: 25px;
+            min-width: 800px;
+            margin: 0 auto 10px;
+            line-height: 25px;
+            font-size: 14px;
+            color: #ffffff;
+            padding: 0 0 10px;
+            position: relative;
         }
 
-        .MATLAB{
-            width: 95%;
+        .skill::before{
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            height: 25px;
+            top: 0;
+            z-index: -2;
+            background: #d2d6d7;
         }
 
-        .Verilog{
-            width: 90%;
+        .skill::after{
+            content: '';
+            background: #333;
+            height: 25px;
+            transition: 0.8s;
+            display: block;
+            width: 100%;
+            animation: animate 1 6s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .MATLAB:after{
+            max-width: 95%;
         }
 
-        .Java{
-            width: 85%;
+        .Verilog:after{
+            max-width: 90%;
         }
 
-        .Cplus{
-            width: 80%;
+        .Java:after{
+            max-width: 85%;
         }
 
-        .Python{
-            width: 75%;
+        .Cplus:after{
+            max-width: 80%;
         }
 
-        .Html5{
-            width: 60%;
+        .Python:after{
+            max-width: 75%;
         }
 
-        .CSS3{
-            width: 50%;
+        .Html5:after{
+            max-width: 60%;
+        }
+
+        .CSS3:after{
+            max-width: 50%;
+        }
+
+        @keyframes animate {
+            0%{
+                width: 0;
+            }
+            100%{
+                width: 100%;
+            }
         }
 
         .slider {
@@ -326,40 +357,28 @@
     <section class="skills" id="skills">
         <h2>My Skills</h2>
 
-        <p>MATLAB</p>
-        <div class="container">
-            <div class ="skill MATLAB">95%</div>
-        </div>
+        <h3>MATLAB</h3>
+        <div class ="skill MATLAB">95%</div>
 
-        <p>Verilog</p>
-        <div class="container">
-            <div class ="skill Verilog">90%</div>
-        </div>
 
-        <p>Java</p>
-        <div class="container">
-            <div class ="skill Java">85%</div>
-        </div>
+        <h3>Verilog</h3>
+        <div class ="skill Verilog">90%</div>
 
-        <p>C++</p>
-        <div class="container">
-            <div class ="skill Cplus">80%</div>
-        </div>
 
-        <p>Python</p>
-        <div class="container">
-            <div class ="skill Python">75%</div>
-        </div>
+        <h3>Java</h3>
+        <div class ="skill Java">85%</div>
 
-        <p>Html 5</p>
-        <div class="container">
-            <div class ="skill Html5">60%</div>
-        </div>
+        <h3>C++</h3>
+        <div class ="skill Cplus">80%</div>
 
-        <p>CSS 3</p>
-        <div class="container">
-            <div class ="skill CSS3">50%</div>
-        </div>
+        <h3>Python</h3>
+        <div class ="skill Python">75%</div>
+
+        <h3>Html 5</h3>
+        <div class ="skill Html5">60%</div>
+
+        <h3>CSS 3</h3>
+        <div class ="skill CSS3">50%</div>
 
     </section>
 
